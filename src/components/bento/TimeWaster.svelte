@@ -13,6 +13,7 @@
 	let showInfo = $state(false);
 
 	const KEY = 'collective-waste';
+	const enabled = !!(Site.abacus.instance && Site.abacus.namespace);
 
 	// Use persistentWritable for personal count with cross-tab sync
 	const personalCountStore = persistentWritable<number>('waste-clicks', {
@@ -26,6 +27,10 @@
 
 	onMount(() => {
 		if (browser) {
+			if (!enabled) {
+				isLoading = false;
+				return;
+			}
 			// Get initial count
 			fetchCurrentCount();
 
@@ -69,6 +74,10 @@
 	});
 
 	async function fetchCurrentCount() {
+		if (!enabled) {
+			isLoading = false;
+			return;
+		}
 		try {
 			const response = await fetch(`${Site.abacus.instance}/get/${Site.abacus.namespace}/${KEY}`);
 			if (response.ok) {
@@ -85,6 +94,7 @@
 	}
 
 	function setupStream() {
+		if (!enabled) return null;
 		const source = new EventSource(
 			`${Site.abacus.instance}/stream/${Site.abacus.namespace}/${KEY}`
 		);
@@ -132,6 +142,7 @@
 	}
 
 	async function handleClick() {
+		if (!enabled) return;
 		buttonScale = 0.95;
 		setTimeout(() => (buttonScale = 1), 150);
 
@@ -179,14 +190,9 @@
 				A real-time global counter tracking every click from everyone visiting this site. Completely
 				pointless, yet oddly satisfying.
 			</p>
-			<p class="text-subtext1 text-[10px]">
-				Powered by <a
-					href="https://v2.jasoncameron.dev/abacus/"
-					target="_blank"
-					rel="noopener"
-					class="text-accent hover:underline">Abacus</a
-				>
-			</p>
+			{#if !enabled}
+				<p class="text-subtext1 text-[10px]">Disabled (no counter backend configured).</p>
+			{/if}
 		</div>
 	</div>
 
@@ -213,7 +219,7 @@
 
 		<button
 			onclick={handleClick}
-			disabled={isLoading}
+			disabled={isLoading || !enabled}
 			class="bg-accent hover:bg-accent/90 active:bg-accent/80 rounded-xl px-6 py-3 text-base font-bold transition-all duration-150 hover:scale-105 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
 			style="transform: scale({buttonScale})"
 		>

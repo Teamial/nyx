@@ -4,6 +4,16 @@ import { measurePerformance } from '$lib/utils/performance';
 
 export const load: LayoutServerLoad = async () => {
 	const { instance, namespace, key } = Site.abacus;
+
+	// Abacus analytics is optional; disable cleanly when not configured.
+	if (!instance || !namespace || !key) {
+		return {
+			footerData: {
+				value: '—'
+			}
+		};
+	}
+
 	let footerData;
 	try {
 		footerData = await measurePerformance('abacus-api-fetch', async () => {

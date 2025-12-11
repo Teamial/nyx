@@ -2,7 +2,7 @@
 title = "RedditVideoMakerBot"
 description = "A completely automated video creation bot for reddit videos typically catered to TikTok and youtube shorts It was built using Python, PRAW, Playwright & ffmpeg. As of writing this, videos created by the bot have gained over 350,000,000 views."
 date = "2023-02-01"
-published = true
+published = false
 featured = false
 tags = ["python", "praw", "playwright", "ffmpeg", "automation"]
 

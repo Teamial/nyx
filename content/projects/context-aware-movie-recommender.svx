@@ -1,0 +1,22 @@
+~~~
+title = "Context-Aware Hybrid Movie Recommender"
+description = "A hybrid recommender system with a clean API and embeddings-based search for personalized movie recommendations."
+date = "2025-07-15"
+published = true
+featured = true
+tags = ["python", "fastapi", "postgresql", "pgvector", "react", "machine-learning"]
+
+[[links]]
+text = "GitHub"
+url = "https://github.com/teamial"
+~~~
+
+# Context-Aware Hybrid Movie Recommender
+
+I designed and built a context-aware hybrid recommendation system that simplifies complex personalization into a clean API.
+
+**Tech**
+- FastAPI backend
+- PostgreSQL + `pgvector` for embeddings search
+- React UI for exploration and feedback loops
+

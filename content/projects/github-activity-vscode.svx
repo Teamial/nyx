@@ -1,0 +1,22 @@
+~~~
+title = "GitHub Activity Tracker (VS Code Extension)"
+description = "A VS Code extension that tracks Git/GitHub activity to help developers understand their workflow and stay consistent."
+date = "2025-08-01"
+published = true
+featured = true
+tags = ["typescript", "javascript", "git", "vscode"]
+
+[[links]]
+text = "GitHub"
+url = "https://github.com/teamial"
+~~~
+
+# GitHub Activity Tracker (VS Code Extension)
+
+I built a Visual Studio Code extension to track Git / GitHub activity and surface useful insights about coding habits over time.
+
+**Highlights**
+- Tracks activity signals in-editor and summarizes them in a clean UI
+- Built with TypeScript/JavaScript and Git integration
+- Designed with reliability and recoverability in mind (retries + error handling)
+

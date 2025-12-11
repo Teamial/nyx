@@ -2,7 +2,7 @@
 title = "Hackathons Canada"
 description = "Hackathons Canada is a platform that connects students to hackathons across Canada (and beyond). It was built using Django, Caddy, Flower, Postgres, ValKey & Docker. I personally lead the backend team and personally handle DevOps and site administration."
 date = "2023-11-01"
-published = true
+published = false
 featured = false
 tags = ["django", "caddy", "flower", "postgres", "valkey", "docker", "hackathons"]
 

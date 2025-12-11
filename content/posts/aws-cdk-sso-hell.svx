@@ -1,6 +1,6 @@
 ~~~
 description = "Fix AWS CDK InvalidClientTokenId error after migrating to AWS SSO. The solution: delete stale ~/.aws/credentials."
-published_at = "2025-11-26"
+published_at = ""
 tags = ["aws", "cdk", "sso", "debugging"]
 
 [title]

@@ -1,4 +1,4 @@
-import { IconBrandGithub, IconBrandLinkedin, IconBrandX } from '@tabler/icons-svelte';
+import { IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons-svelte';
 import Site from '$lib/config/common';
 
 export const Home = {
@@ -13,7 +13,11 @@ export const Home = {
 			text: 'LinkedIn',
 			icon: IconBrandLinkedin
 		},
-		{ href: Site.out.x, text: '', icon: IconBrandX }
+		{
+			href: `mailto:${Site.out.email}`,
+			text: 'Email',
+			icon: IconMail
+		}
 	]
 };
 
@@ -31,36 +35,36 @@ export interface ExperienceTimelineItem {
 
 export const experienceTimeline: ExperienceTimelineItem[] = [
 	{
-		company: 'Stan',
-		role: 'Sr Full Stack Engineer',
-		url: 'https://stan.store',
-		logoUrl: '/logos/stan.svg',
-		logoAlt: 'Stan Logo',
+		company: 'National Science Foundation (NSF)',
+		role: 'Software Engineer Intern — ML',
+		url: 'https://www.nsf.gov/',
+		logoUrl: '/logos/nsf.svg',
+		logoAlt: 'NSF',
 		startDate: '2025-06-01',
+		endDate: '2025-08-01',
 		details:
-			'Senior Full Stack Engineer at Stan, building AI products that help millions articulate their ideas and share them at scale.',
-		logoScale: 1.15
+			'Built RADAR signal detection queries in GNU Radio and validated detection algorithms across large datasets.'
 	},
 	{
-		company: 'StorageBox',
-		role: 'CTO',
-		url: 'https://storagebox.app/',
-		logoUrl: '/logos/storagebox.svg',
-		logoAlt: 'StorageBox Logo',
-		startDate: '2024-09-01',
-		endDate: '2025-06-01',
+		company: 'Morgan Stanley',
+		role: 'Software Engineer Intern',
+		url: 'https://www.morganstanley.com/',
+		logoUrl: '/logos/morganstanley.svg',
+		logoAlt: 'Morgan Stanley',
+		startDate: '2025-01-01',
+		endDate: '2025-02-01',
 		details:
-			'As CTO, I led the development of StorageBox, an innovative startup revolutionizing eco-friendly Shopify fulfillment with edge based sustainable warehousing technology and seamless logistics integrations.'
+			'Built Redis CRUD API caching and authored API documentation to streamline adoption and reduce support tickets.'
 	},
 	{
-		company: 'Hack Canada',
-		role: 'Cofounder',
-		url: 'https://hackcanada.org/',
-		logoUrl: '/logos/hackcanada.svg',
-		logoAlt: 'Hack Canada Logo',
-		startDate: '2024-09-01',
-		endDate: '2025-05-01',
+		company: 'Break Through Tech (BTT AI)',
+		role: 'Machine Learning Engineer Fellow',
+		url: 'https://breakthroughtech.org/',
+		logoUrl: '/logos/btt.svg',
+		logoAlt: 'Break Through Tech',
+		startDate: '2025-05-01',
+		endDate: '2025-08-01',
 		details:
-			"Co-launched Hack Canada, Hackathons Canada's premier national hackathon series. Organized the inaugural event (February 21–23, 2025), secured partnerships with Google, WarpDev, and Microsoft and more, oversaw all development, workshops, and mentorship sessions for 400+ participants."
+			'Built and optimized NLP and vision models, improving inference time and accuracy through hyperparameter tuning.'
 	}
 ];

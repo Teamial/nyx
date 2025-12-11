@@ -1,6 +1,6 @@
 ~~~
 description = "Monitor FastAPI client connections and auto-cancel abandoned streaming tasks with structured concurrency"
-published_at = "2025-07-06"
+published_at = ""
 tags = ["fastapi", "python", "async", "streaming"]
 
 [title]

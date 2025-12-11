@@ -39,9 +39,9 @@
 		<h1 class="text-3xl font-bold md:text-4xl">
 			Hey! I'm
 			<span class="text-accent">
-				<span class="sr-only select-none">Jason</span>
+				<span class="sr-only select-none">Teanna</span>
 				<span aria-hidden="true">
-					<span>J</span><span
+					<span>Te</span><span
 						class="decoration-accent/30 underline decoration-dashed opacity-70"
 						onmouseenter={() => (isNameHovered = true)}
 						onmouseleave={() => (isNameHovered = false)}
@@ -50,56 +50,34 @@
 						tabindex="0"
 						role="button"
 						aria-label="Hover or focus to see a fun fact about my name">a</span
-					><span>son</span><span
+					><span>nna</span><span
 						aria-hidden="true"
 						class={`pointer-events-none inline-flex overflow-hidden align-baseline whitespace-nowrap transition-all duration-500 ease-out select-none ${
 							isNameHovered ? 'max-w-[7ch] opacity-100' : 'max-w-0 opacity-0'
-						}`}>&nbsp;'JSON'</span
+						}`}>&nbsp;'Tea'</span
 					>
 				</span>
-				<span>Cameron</span>
+				<span>Cole</span>
 			</span>
 		</h1>
-		<!--note to self: Could be improved via Senior SWE (Fullstack, AI, Systems) @ Stan.. -->
 		<p class="text-subtext0 max-w-prose text-lg leading-relaxed">
-			I'm currently working as a Senior SWE @ <a
+			I'm a Computer Science student at <a
 				class="link text-accent/85"
 				target="_blank"
 				rel="noopener"
-				href="https://stan.store">Stan</a
-			>. I've written software that is trusted by
-			<a
-				class="link text-accent/85"
-				target="_blank"
-				rel="noopener"
-				href="https://policytoolbox.iiep.unesco.org">The United Nations</a
-			>,
-			<a class="link text-accent/85" target="_blank" rel="noopener" href="https://git.kernel.org"
-				>The Linux Foundation</a
-			>,
-			<a
-				class="link text-accent/85"
-				target="_blank"
-				rel="noopener"
-				href="https://wiki.archlinux.org">Arch Linux</a
-			>,
-			<a class="link text-accent/85" target="_blank" rel="noopener" href="https://gitlab.gnome.org"
-				>GNOME</a
-			>,
-			<a
-				class="link text-accent/85"
-				target="_blank"
-				rel="noopener"
-				href="https://gitlab.steamos.cloud">Valve</a
-			>,
-			<a class="link text-accent/85" target="_blank" rel="noopener" href="https://trac.ffmpeg.org"
-				>FFmpeg</a
+				href="https://www.lehman.cuny.edu/">Lehman College</a
+			>, concentrating in Software Engineering &amp; AI. I’m interested in ML + backend systems, and
+			I’ve previously interned at
+			<a class="link text-accent/85" target="_blank" rel="noopener" href="https://www.nsf.gov/"
+				>NSF</a
 			>
-			and many others<a
-				href="/projects/anubis"
-				class="hover:text-accent ml-0.5 align-super text-xs font-semibold">[1]</a
-			>. Seeing code I wrote actually help people at scale is what keeps me building. Currently
-			building AI that helps people articulate their ideas and share them at scale.
+			and
+			<a
+				class="link text-accent/85"
+				target="_blank"
+				rel="noopener"
+				href="https://www.morganstanley.com/">Morgan Stanley</a
+			>. I love building products that are practical, performant, and easy to use.
 		</p>
 		<div class="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
 			{#each Home.socialLinks as link (link.href)}
@@ -146,7 +124,7 @@
 				<ColorSelector />
 			</div>
 
-			<!-- Box 2: Book a chat -->
+			<!-- Box 2: Connect -->
 			<div class="border-surface0 bg-base rounded-xl border p-4 shadow-lg lg:col-span-1">
 				<h3 class="text-text mb-3 flex items-center gap-2 text-sm font-semibold">
 					<IconCalendarEvent size={16} class="text-accent" />
@@ -156,13 +134,11 @@
 					Always open to interesting projects and conversations.
 				</p>
 				<a
-					href={Site.out.calcom}
-					target="_blank"
-					rel="noopener noreferrer"
+					href={`mailto:${Site.out.email}`}
 					class="bg-surface0 text-text hover:bg-accent/80 focus:ring-accent/50 focus:ring-offset-base inline-flex w-full items-center justify-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium shadow-sm transition-colors hover:text-base focus:ring-2 focus:ring-offset-2 focus:outline-none"
 				>
 					<IconCalendarEvent size={16} />
-					Book a Chat
+					Email me
 				</a>
 			</div>
 
@@ -179,15 +155,6 @@
 						<IconActivity size={16} class="text-accent" />
 						<span>Recent Commits</span>
 					</h3>
-					<a
-						href="https://katib.jsn.cam"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="See how this is calculated Katib"
-						class="text-accent/80 hover:text-accent text-xs font-medium transition-colors"
-					>
-						[info]
-					</a>
 				</div>
 				{#if data.commitData?.commits?.length > 0}
 					<ul class="space-y-1.5 text-sm">
@@ -220,7 +187,7 @@
 				{/if}
 				<div class="mt-3 flex items-center gap-3">
 					<a
-						href="https://github.com/jasonlovesdoggo"
+						href={Site.out.github}
 						target="_blank"
 						rel="noopener noreferrer"
 						class="group text-accent inline-flex items-center gap-1 text-sm hover:underline"

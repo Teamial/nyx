@@ -23,6 +23,51 @@
 		isSidebarOpen = false;
 	}
 
+	const personSchema = $derived(() => {
+		const schema: Record<string, unknown> = {
+			'@context': 'https://schema.org',
+			'@type': ['Person', 'ProfilePage'],
+			name: Site.seo.author,
+			givenName: 'Teanna',
+			familyName: 'Cole',
+			url: Site.url,
+			description: Site.description,
+			jobTitle: 'Computer Science Student',
+			address: {
+				'@type': 'PostalAddress',
+				addressLocality: Site.seo.location.city,
+				addressRegion: Site.seo.location.region,
+				addressCountry: Site.seo.location.country
+			},
+			sameAs: [Site.out.github, Site.out.linkedin].filter(Boolean),
+			knowsAbout: [
+				'Software Engineering',
+				'Machine Learning',
+				'Backend Development',
+				'Web Development',
+				'Python',
+				'Java',
+				'TypeScript'
+			],
+			mainEntity: {
+				'@type': 'Person',
+				name: Site.seo.author
+			},
+			identifier: Site.url
+		};
+
+		if (Site.seo.birthDate) schema.birthDate = Site.seo.birthDate;
+		if (Site.seo.worksFor) {
+			schema.worksFor = {
+				'@type': 'Organization',
+				name: Site.seo.worksFor.name,
+				url: Site.seo.worksFor.url
+			};
+		}
+
+		return schema;
+	});
+
 	// Enable View Transitions API for SvelteKit navigation
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -58,56 +103,13 @@
 	<meta name="author" content={Site.seo.author} />
 	<meta name="keywords" content={Site.tags.join(', ')} />
 	<meta name="robots" content="index, follow" />
-	<meta name="geo.region" content="CA-ON" />
+	<meta name="geo.region" content="US-NY" />
 	<meta name="geo.placename" content={Site.seo.location.city} />
 	<link rel="canonical" href={Site.url + page.url.pathname} />
 
 	<!-- JSON-LD Person Schema -->
 	{@html `<script type="application/ld+json">
-		${JSON.stringify({
-			'@context': 'https://schema.org',
-			'@type': ['Person', 'ProfilePage'],
-			name: Site.seo.author,
-			givenName: 'Jason',
-			familyName: 'Cameron',
-			alternateName: ['jsoncam', 'jasonlovesdoggo', 'json'],
-			url: Site.url,
-			description:
-				'Senior Software Engineer based in Toronto, Canada. Expert in Golang, Python, DevOps, and hackathon development.',
-			jobTitle: 'Senior Software Engineer',
-			birthDate: Site.seo.birthDate,
-			worksFor: {
-				'@type': 'Organization',
-				name: Site.seo.worksFor.name,
-				url: Site.seo.worksFor.url
-			},
-			address: {
-				'@type': 'PostalAddress',
-				addressLocality: Site.seo.location.city,
-				addressRegion: Site.seo.location.region,
-				addressCountry: 'CA'
-			},
-			sameAs: [
-				Site.out.github,
-				Site.out.linkedin,
-				Site.out.instagram,
-				Site.out.bluesky,
-				Site.out.wakatime
-			],
-			knowsAbout: [
-				'Software Engineering',
-				'DevOps',
-				'Golang',
-				'Python',
-				'Web Development',
-				'Backend Development'
-			],
-			mainEntity: {
-				'@type': 'Person',
-				name: Site.seo.author
-			},
-			identifier: Site.url
-		})}
+		${JSON.stringify(personSchema)}
 	</script>`}
 </svelte:head>
 

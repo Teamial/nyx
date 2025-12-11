@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<meta name="description" content="A collection of projects by Jason Cameron." />
+	<meta name="description" content="A collection of projects by Teanna Cole." />
 </svelte:head>
 
 <div class="space-y-8">

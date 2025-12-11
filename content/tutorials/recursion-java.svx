@@ -1,7 +1,7 @@
 ~~~
 title = "Recursion in Java"
 description = "A practical tutorial on recursion in Java, covering basic concepts, implementation techniques, and common recursive algorithms."
-published_at = "2025-04-19"
+published_at = ""
 tags = ["java", "recursion", "algorithms", "programming"]
 
 [[sources]]

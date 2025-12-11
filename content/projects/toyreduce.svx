@@ -2,7 +2,7 @@
 title = "ToyReduce"
 description = "A tiny, distributed MapReduce system in Go with automatic parallelization, fault-tolerant scheduling, and P2P shuffle. Features real-time web UI for monitoring and job submission."
 date = "2025-10-13"
-published = true
+published = false
 tags = ["golang", "distributed-systems", "mapreduce", "hadoop", "p2p", "web-ui", "svelte"]
 
 [image]

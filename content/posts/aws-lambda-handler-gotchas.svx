@@ -1,6 +1,6 @@
 ~~~
 description = "Runtime.InvalidEntrypoint can mean async handlers, architecture mismatches, or file permissions — CloudWatch won't tell you which."
-published_at = "2025-11-28"
+published_at = ""
 tags = ["aws", "lambda", "python", "docker", "debugging"]
 
 [title]

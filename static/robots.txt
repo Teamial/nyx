@@ -39,4 +39,4 @@ User-agent: YouBot
 Disallow: /
 
 User-agent: *
-Sitemap: https://jsn.cam/sitemap.xml
+Sitemap: https://example.com/sitemap.xml

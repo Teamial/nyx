@@ -16,8 +16,8 @@ interface Site {
 	tags: string[];
 	seo: {
 		author: string;
-		birthDate: string;
-		worksFor: {
+		birthDate?: string;
+		worksFor?: {
 			name: string;
 			url: string;
 		};
@@ -31,69 +31,57 @@ interface Site {
 	out: {
 		github: string;
 		linkedin: string;
-		calcom: string;
-		wakatime: string;
-		bluesky: string;
-		instagram: string;
-		x: string;
+		email: string;
+		calcom?: string;
+		wakatime?: string;
+		bluesky?: string;
+		instagram?: string;
+		x?: string;
 	};
 	repo: { url: string; commitBaseUrl: string };
 }
 
 const Site: Site = {
-	name: 'Jason Cameron',
-	url: dev ? 'http://localhost:5173' : 'https://jasoncameron.dev',
+	name: 'Teanna Cole',
+	// TODO: replace with your production domain once deployed
+	url: dev ? 'http://localhost:5173' : 'https://example.com',
 	description:
-		'Jason Cameron - Senior Software Engineer in Toronto, Canada. I like occasionally building cool shit',
+		'Teanna Cole — Computer Science student in New York, NY, focused on software engineering and machine learning.',
 	tags: [
-		'Jason Cameron',
-		'Senior Software Engineer',
-		'Toronto Software Developer',
-		'Canada',
-		'Golang Developer',
-		'Python Developer',
-		'DevOps Engineer',
+		'Teanna Cole',
+		'Computer Science Student',
+		'New York Software Developer',
+		'New York, NY',
+		'Machine Learning',
 		'Software Engineering',
-		'Backend Developer',
-		'Full Stack Developer',
-		'Hackathon Developer',
-		'Toronto Tech',
-		'Canadian Developer',
+		'Backend Development',
+		'Full Stack Development',
 		'Web Development',
-		'Cloud Computing',
-		'API Development',
-		'Software Architecture'
+		'API Development'
 	],
 	seo: {
-		author: 'Jason Cameron',
-		birthDate: '2006-04-19',
-		worksFor: {
-			name: 'Stan',
-			url: 'https://stan.store'
-		},
+		author: 'Teanna Cole',
 		location: {
-			city: 'Toronto',
-			region: 'Ontario',
-			country: 'Canada'
+			city: 'New York',
+			region: 'NY',
+			country: 'US'
 		}
 	},
 	abacus: {
-		instance: 'https://abacus.jasoncameron.dev',
-		namespace: 'jasoncameron',
-		key: 'portfolio'
+		// TODO: analytics service is template-specific; disable by default
+		instance: '',
+		namespace: '',
+		key: ''
 	},
 	out: {
-		github: 'https://github.com/JasonLovesDoggo',
-		linkedin: 'https://www.linkedin.com/in/jsoncameron/',
-		calcom: 'https://cal.com/jsoncam/15min',
-		wakatime: 'https://wakatime.com/@jasonlovesdoggo',
-		bluesky: 'https://bsky.app/profile/jsn.cam',
-		instagram: 'https://www.instagram.com/jsn.cam/',
-		x: 'https://x.com/tomlparser'
+		github: 'https://github.com/teamial',
+		linkedin: 'https://www.linkedin.com/in/teanna-cole/',
+		email: '48teanna@gmail.com'
 	},
 	repo: {
-		url: 'https://github.com/JasonLovesDoggo/nyx',
-		commitBaseUrl: 'https://github.com/JasonLovesDoggo/nyx/commit/'
+		// TODO: point to your fork once you publish it
+		url: '',
+		commitBaseUrl: ''
 	}
 };
 
@@ -111,29 +99,6 @@ export const Socials = [
 		label: 'LinkedIn',
 		icon: IconBrandLinkedin,
 		footer: true
-	},
-	{
-		url: Site.out.x,
-		label: 'X',
-		icon: IconBrandX,
-		footer: true
-	},
-	{
-		url: Site.out.bluesky,
-		label: 'Bluesky',
-		icon: IconBrandBluesky,
-		footer: false
-	},
-	{
-		url: Site.out.instagram,
-		label: 'Instagram',
-		icon: IconBrandInstagram,
-		footer: true
-	},
-	{
-		url: Site.out.wakatime,
-		label: 'WakaTime',
-		icon: Wakatime as unknown as Icon,
-		footer: false
 	}
+	// Template socials removed by default; add more once you have accounts you want to link.
 ];
